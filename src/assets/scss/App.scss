@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+}
+
+#App {
+    background-color: #b2d79b;
+
+    min-height: 100vh;
+    min-width: 100vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    line-height: 1;
+}
+
+//Routes
+.routesWrapper {
+    flex: 1;
+}
+
+//HomePage
+.homePage {
+    width: 100%;
+
+    .homeHeader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+}
