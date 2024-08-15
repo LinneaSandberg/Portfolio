@@ -1,7 +1,13 @@
+@font-face {
+    font-family: "Figtree";
+    src: url("../fonts/Figtree\,Montserrat/@font-face") format("truetype");
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Figtree", sans-serif;
 }
 
 body {
@@ -9,7 +15,7 @@ body {
 }
 
 #App {
-    background-color: #b2d79b;
+    background-color: #f5f5f5;
 
     min-height: 100vh;
     min-width: 100vw;
