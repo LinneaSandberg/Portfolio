@@ -1,13 +1,30 @@
 @font-face {
     font-family: "Figtree";
-    src: url("../fonts/Figtree\,Montserrat/@font-face") format("truetype");
+    src: url("../fonts/Figtree/Figtree-VariableFont_wght.ttf") format("truetype");
 }
+
+// Colors
+$Turquoise: #b2ffd1;
+$Pink: #fd61dc;
+$Yellow: #faff8b;
+$Red: #ff758c;
+$Purple: #c4d3fe;
+$Orange: #fed0af;
 
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: "Figtree", sans-serif;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit
 }
 
 body {
@@ -15,8 +32,7 @@ body {
 }
 
 #App {
-    background-color: #f5f5f5;
-
+    background-color: #ffffff;
     min-height: 100vh;
     min-width: 100vw;
 }
@@ -30,9 +46,21 @@ h6 {
     line-height: 1;
 }
 
-//Routes
-.routesWrapper {
-    flex: 1;
+h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    border: none
+}
+
+a {
+    text-decoration: none
 }
 
 //HomePage
@@ -47,15 +75,43 @@ h6 {
         height: 100vh;
     }
 
+    // This makes the figure a circle, and following when scrolling
+    .logo-pic {
+        position: fixed;
+        top: 40px;
+        left: 40px;
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
     .menu {
         position: absolute;
-        top: 20px;
-        right: 5%;
+        top: 40px;
+        right: 40px;
 
         ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
+            .pink {
+                background-color: $Pink;
+            }
+
+            .yellow {
+                background-color: $Yellow;
+            }
+
+            .purple {
+                background-color: $Purple;
+            }
+
+            .red {
+                background-color: $Red;
+            }
 
             li {
                 position: relative;
@@ -65,37 +121,212 @@ h6 {
                 cursor: pointer;
 
                 a {
+                    position: relative;
                     display: inline-block;
                     width: 100%;
                     height: 100%;
-                    background-color: black;
                     border-radius: 50%;
-                    position: relative;
-
                 }
-            }
-
-            li:before {
-                content: attr(data-title);
-                position: absolute;
-                left: 25px;
-                bottom: 0;
-                white-space: nowrap;
-                opacity: 0;
-                transition: opacity 0.3s;
-            }
-
-            li:hover:before {
-                opacity: 1;
             }
         }
     }
 
+    // This is the main content of the page and it is centered
     .section-wrapper {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
+        padding: 40px;
+    }
+
+    // AboutSection
+    .about-section {
+        background-color: $Pink;
+
+        .box {
+            will-change: transform;
+        }
+
+        .spacer {
+            height: 10vh;
+        }
+    }
+
+    // ContactSection
+    .contact-section {
+        background-color: $Yellow;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
+
+        .github-logo,
+        .linkedin-logo {
+            top: 100px;
+            right: 40px;
+            width: 50px;
+            height: 50px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        .contact-form {
+            opacity: 1;
+            transition: opacity 0.3s;
+            display: flex;
+            flex-flow: column wrap;
+            margin-top: 3rem;
+            max-width: 100%;
+
+
+            .input-wrapper {
+                width: 100%;
+                display: flex;
+                -webkit-box-pack: justify;
+                justify-content: space-between;
+            }
+
+            .inputs {
+                padding: 0.2rem;
+                border: 0.1rem solid #fd61dc;
+                margin-bottom: 2rem;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+
+                .input-field {
+                    background: white;
+                    font-size: inherit;
+                    border: none;
+                    outline: none;
+                    padding: 1em;
+
+                    width: 100%;
+                    max-width: 100%;
+                    box-sizing: border-box;
+                    border-radius: 0px;
+                }
+
+                .message {
+                    width: 100%;
+                    line-height: 1.6;
+                    resize: vertical;
+                    min-height: 150px;
+                    overflow: auto;
+                }
+            }
+
+            .submit-button {
+                background-color: $Red;
+                color: white;
+                border: none;
+                padding: 1rem;
+                cursor: pointer;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                border-radius: 0px;
+
+                // this is why its to the right
+                margin-right: 50%;
+
+                &:hover {
+                    background-color: $Pink;
+                }
+            }
+
+            .input-size {
+                width: 49%;
+            }
+        }
+    }
+
+    // ProjectSection
+    .project-section {
+        background-color: $Red;
+    }
+
+    // SkillsSection
+    .skills-wrapper {
+        background-color: $Purple;
     }
 }
+
+.about-wrapper {
+    display: flex;
+    gap: 20px;
+
+    .about-text-wrapper {
+        flex: 1;
+        max-width: 400px;
+
+        h2 {
+            color: #ffffff;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+    }
+
+    .about-figure-wrapper {
+        width: 40%;
+        padding: 32px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: auto;
+            border: $Orange 5px solid;
+        }
+    }
+
+    .boxes-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        width: 80%;
+        padding: 20px;
+        box-sizing: border-box;
+
+        .project-box {
+            flex: 1 1 calc(25% - 20px);
+            margin: 10px;
+            text-align: center;
+
+            img {
+                width: 100%;
+                height: auto;
+                border: $Orange 5px solid;
+                border-radius: 50%;
+            }
+        }
+    }
+
+    .images-wrapper {
+        display: flex;
+        flex-direction: column;
+        flex: 2;
+        gap: 20px;
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
+
+@media (min-width: 768px) {}
+
+@media (min-width: 992px) {}

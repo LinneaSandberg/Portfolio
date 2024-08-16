@@ -1,12 +1,14 @@
-
-
+import reactLogo from '../../assets/images/react-tur.svg';
+import javascriptLogo from '../../assets/images/javascript.svg';
 
 const SkillsSection = () => {
     return (
-        <section className="section-wrapper" id="section-skills">
+        <section className="section-wrapper skills-wrapper" id="section-skills">
             <h2>Skills</h2>
             {/* Gallery of all the skills I have learned so far. */}
-            <p>HTML, CSS, JavaScript, React, Node.js, Express, MongoDB</p>
+            <img src={reactLogo} alt="React logo" width={200} />
+            <img src={javascriptLogo} alt="TypeScript logo" width={200} />
+
         </section>
     )
 }
