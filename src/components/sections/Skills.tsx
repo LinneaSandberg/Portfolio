@@ -4,7 +4,7 @@ import javascriptLogo from '../../assets/images/javascript.svg';
 const SkillsSection = () => {
     return (
         <section className="section-wrapper skills-wrapper" id="section-skills">
-            <h2>Skills</h2>
+            <h2 className='skills-title'>Skills</h2>
             {/* Gallery of all the skills I have learned so far. */}
             <img src={reactLogo} alt="React logo" width={200} />
             <img src={javascriptLogo} alt="TypeScript logo" width={200} />

@@ -1,52 +1,64 @@
 import { SubmitHandler, useForm } from 'react-hook-form';
 import githubLogo from '../../assets/images/github.png';
 import linkedinLogo from '../../assets/images/linkedin.svg';
+import emailjs from '@emailjs/browser';
+import { Inputs } from '../../types/Input.types';
+import React, { useEffect, useState } from 'react';
 
-interface Inputs {
-    Firstname: string;
-    Lastname: string;
-    Email: string;
-    Phone: string;
-    Subject: string;
-    Message: string;
+interface InputsFormProps {
+    initialValues?: Inputs;
 }
 
-const ContactSection = () => {
-
+const ContactSection: React.FC<InputsFormProps> = ({ initialValues }) => {
+    const [isLoading, setIsLoading] = useState(false);
     const {
         register,
         handleSubmit,
-        // watch,
-        // formState: { errors },
+        reset,
+        formState: { isSubmitSuccessful }
     } = useForm<Inputs>()
 
-    const onSubmit: SubmitHandler<Inputs> = async ({ Firstname, Lastname, Email, Phone, Subject, Message
+    const onFormSubmit: SubmitHandler<Inputs> = async ({ Firstname, Lastname, Email, Phone, Subject, Message
     }) => {
         console.log(Firstname, Lastname, Email, Phone, Subject, Message);
+        setIsLoading(true);
+
+        try {
+            const res = await emailjs.send(
+                'service_496n279',
+                'template_m52m9vv',
+                {
+                    Firstname,
+                    Lastname,
+                    Email,
+                    Phone,
+                    Subject,
+                    Message
+                },
+                'TTN7_QfFz0BsS0pNf'
+            );
+            console.log('Email sent', res);
+        } catch (error) {
+            console.error('Failed to send email:', error);
+        } finally {
+            setIsLoading(false);
+        }
     }
 
-
-
+    useEffect(() => {
+        reset(initialValues);
+    }, [initialValues, isSubmitSuccessful, reset]);
 
     return (
         <section className="section-wrapper contact-section" id="section-contact">
-
-            <h2>Let´s connect</h2>
-            <div className='logos-container'>
-                <figure className="github-logo">
-                    <img src={githubLogo} alt="GitHub" />
-                </figure>
-                <figure className="linkedin-logo">
-                    <img src={linkedinLogo} alt="LinkedIn" />
-                </figure>
-            </div>
-            <form className="contact-form" onSubmit={handleSubmit(onSubmit)}>
+            <h2 className='contact-title'>Let´s connect</h2>
+            <form className="contact-form" onSubmit={handleSubmit(onFormSubmit)}>
                 <div className="input-wrapper">
                     <div className="inputs input-size">
                         <input
                             type="text"
                             id="Firstname"
-                            placeholder="FIRST NAME *"
+                            placeholder="FIRSTNAME *"
                             className="input-field"
                             {...register("Firstname", { required: true })}
                         />
@@ -55,7 +67,7 @@ const ContactSection = () => {
                         <input
                             type="text"
                             id="Lastname"
-                            placeholder="LAST NAME *"
+                            placeholder="LASTNAME *"
                             className="input-field"
                             {...register("Lastname", { required: true })}
                         />
@@ -105,10 +117,25 @@ const ContactSection = () => {
                 </div>
 
                 <div className="input-wrapper">
-                    <button type="submit" className="submit-button">SEND</button>
+                    <button
+                        type="submit"
+                        className="submit-button"
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Sending...' : 'Send'}
+                    </button>
                 </div>
 
             </form>
+
+            <div className='logos-container'>
+                <a href='https://github.com/LinneaSandberg' className="github-logo">
+                    <img src={githubLogo} alt="GitHub" />
+                </a>
+                <a href='https://www.linkedin.com/in/llinnea-sandberg/' className="linkedin-logo">
+                    <img src={linkedinLogo} alt="LinkedIn" />
+                </a>
+            </div>
         </section>
     )
 }

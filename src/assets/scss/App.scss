@@ -68,18 +68,37 @@ a {
     position: relative;
     padding: 20px;
 
-    .homeHeader {
+    .hero-section {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
+        margin: 0 40px;
+
+        .hero-title {
+            font-size: 3rem;
+            color: $Pink;
+            margin-bottom: 20px;
+
+            .dot {
+                color: $Purple;
+            }
+        }
+
+        .hero-text {
+            display: inline;
+            font-size: 1rem;
+            color: $Red;
+            margin-bottom: 20px;
+        }
     }
 
     // This makes the figure a circle, and following when scrolling
     .logo-pic {
         position: fixed;
         top: 40px;
-        left: 40px;
+        left: 30px;
         width: 50px;
         height: 50px;
         overflow: hidden;
@@ -93,8 +112,8 @@ a {
 
     .menu {
         position: absolute;
-        top: 40px;
-        right: 40px;
+        top: 30px;
+        right: 30px;
 
         ul {
             .pink {
@@ -143,6 +162,75 @@ a {
     .about-section {
         background-color: $Pink;
 
+        .about-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .about-text-wrapper {
+                flex: 1;
+                max-width: 400px;
+
+                .about-title {
+                    color: $Yellow;
+                }
+
+                p {
+                    font-size: 1rem;
+                    margin-bottom: 20px;
+                }
+            }
+
+            .about-figure-wrapper {
+                width: 40%;
+                padding: 32px;
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    border: $Orange 5px solid;
+                }
+            }
+
+            .boxes-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 80%;
+                padding: 20px;
+                box-sizing: border-box;
+
+                .project-box {
+                    flex: 1 1 calc(25% - 20px);
+                    margin: 10px;
+                    text-align: center;
+
+                    img {
+                        width: 100%;
+                        height: auto;
+                        border: $Orange 5px solid;
+                        border-radius: 50%;
+                    }
+                }
+            }
+
+            .images-wrapper {
+                display: flex;
+                flex-direction: column;
+                flex: 2;
+                gap: 20px;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+
         .box {
             will-change: transform;
         }
@@ -155,22 +243,36 @@ a {
     // ContactSection
     .contact-section {
         background-color: $Yellow;
-
         display: flex;
         flex-direction: column;
         align-items: center;
         width: 100%;
 
-        .github-logo,
-        .linkedin-logo {
-            top: 100px;
-            right: 40px;
-            width: 50px;
-            height: 50px;
+        .contact-title {
+            color: $Purple;
+        }
 
-            img {
-                width: 100%;
-                height: auto;
+        .logos-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+
+            .github-logo,
+            .linkedin-logo {
+                width: 40px;
+                height: 40px;
+
+                a {
+                    cursor: pointer;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
 
@@ -179,7 +281,7 @@ a {
             transition: opacity 0.3s;
             display: flex;
             flex-flow: column wrap;
-            margin-top: 3rem;
+            margin: 3rem 0;
             max-width: 100%;
 
 
@@ -200,7 +302,7 @@ a {
 
                 .input-field {
                     background: white;
-                    font-size: inherit;
+                    font-size: 0.8em;
                     border: none;
                     outline: none;
                     padding: 1em;
@@ -246,87 +348,29 @@ a {
         }
     }
 
-    // ProjectSection
-    .project-section {
-        background-color: $Red;
-    }
-
     // SkillsSection
     .skills-wrapper {
         background-color: $Purple;
+
+        .skills-title {
+            color: $Red;
+        }
     }
-}
 
-.about-wrapper {
-    display: flex;
-    gap: 20px;
+    // ProjectSection
+    .project-section {
+        background-color: $Red;
 
-    .about-text-wrapper {
-        flex: 1;
-        max-width: 400px;
-
-        h2 {
+        .projects-title {
             color: #ffffff;
         }
-
-        p {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-    }
-
-    .about-figure-wrapper {
-        width: 40%;
-        padding: 32px;
-
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        img {
-            width: 100%;
-            height: auto;
-            border: $Orange 5px solid;
-        }
-    }
-
-    .boxes-wrapper {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        width: 80%;
-        padding: 20px;
-        box-sizing: border-box;
-
-        .project-box {
-            flex: 1 1 calc(25% - 20px);
-            margin: 10px;
-            text-align: center;
-
-            img {
-                width: 100%;
-                height: auto;
-                border: $Orange 5px solid;
-                border-radius: 50%;
-            }
-        }
-    }
-
-    .images-wrapper {
-        display: flex;
-        flex-direction: column;
-        flex: 2;
-        gap: 20px;
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
     }
 }
 
+@media (min-width: 768px) {
+    // .homePage {}
+}
 
-@media (min-width: 768px) {}
-
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    // .homePage {}
+}
