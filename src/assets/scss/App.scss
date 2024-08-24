@@ -1,3 +1,7 @@
+// Importing the color module
+@use 'sass:color';
+// border-color: color.scale($Pink, $lightness: 30%);
+
 @font-face {
     font-family: "Figtree";
     src: url("../fonts/Figtree/Figtree-VariableFont_wght.ttf") format("truetype");
@@ -24,7 +28,7 @@ html {
 *,
 *:before,
 *:after {
-    box-sizing: inherit
+    box-sizing: inherit;
 }
 
 body {
@@ -35,6 +39,7 @@ body {
     background-color: #ffffff;
     min-height: 100vh;
     min-width: 100vw;
+    margin: 0 2; // This is the margin for the whole page, to the left and right
 }
 
 h1,
@@ -96,7 +101,7 @@ a {
 
     // This makes the figure a circle, and following when scrolling
     .logo-pic {
-        position: fixed;
+        position: absolute;
         top: 40px;
         left: 30px;
         width: 50px;
@@ -161,14 +166,20 @@ a {
     // AboutSection
     .about-section {
         background-color: $Pink;
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
         .about-wrapper {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            flex-grow: 1;
 
             .about-text-wrapper {
                 flex: 1;
-                max-width: 400px;
+                max-width: 100%;
 
                 .about-title {
                     color: $Yellow;
@@ -178,6 +189,10 @@ a {
                     font-size: 1rem;
                     margin-bottom: 20px;
                 }
+            }
+
+            .imageslist {
+                width: 100%;
             }
 
             .about-figure-wrapper {
@@ -192,7 +207,6 @@ a {
                 img {
                     width: 100%;
                     height: auto;
-                    border: $Orange 5px solid;
                 }
             }
 
@@ -220,18 +234,21 @@ a {
 
             .images-wrapper {
                 display: flex;
-                flex-direction: column;
+                flex-direction: row;
+                width: 100%;
                 flex: 2;
                 gap: 20px;
 
                 img {
                     max-width: 100%;
                     height: auto;
+                    border-radius: 20px;
                 }
             }
         }
 
-        .box {
+        .box,
+        .sbox {
             will-change: transform;
         }
 
@@ -351,9 +368,39 @@ a {
     // SkillsSection
     .skills-wrapper {
         background-color: $Purple;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+
+        .skill-box {
+            flex-shrink: 0;
+            width: 80vw;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            scroll-snap-align: center;
+
+        }
 
         .skills-title {
-            color: $Red;
+            writing-mode: vertical-rl;
+            text-align: left;
+            flex-shrink: 0;
+            height: 100%;
+        }
+
+        img {
+            min-width: 100%;
+            height: 100%;
+            object-fit: contain;
+            scroll-snap-align: center;
+            transition: transform 0.5s ease;
         }
     }
 
@@ -372,5 +419,21 @@ a {
 }
 
 @media (min-width: 992px) {
-    // .homePage {}
+    .homePage {
+        .about-section {
+
+            .about-wrapper {
+                flex-direction: row;
+                gap: 4rem;
+
+                .about-text-wrapper {
+                    max-width: 40%;
+                }
+
+                .imageslist {
+                    width: 40%;
+                }
+            }
+        }
+    }
 }

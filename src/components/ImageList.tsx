@@ -1,6 +1,7 @@
 import oldie from "../assets/images/oldie-pic.jpg";
 import meInNature from "../assets/images/me-in-nature.jpeg";
 import meCoding from "../assets/images/me-koding.jpeg";
+import almi from "../assets/images/almi-ui.png";
 import { useRef } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -9,14 +10,37 @@ const ImageList = () => {
 
     gsap.registerPlugin(useGSAP);
     const container = useRef<HTMLDivElement>(null);
+    const secondContainer = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        gsap.to(".box", {
-            rotation: 360,
-            stagger: 0.1,
-        });
-    }, { scope: container });
+        if (container.current) {
+            gsap.to(".box", {
+                scrollTrigger: {
+                    trigger: container.current,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1,
+                    markers: true
+                },
+                rotation: 360,
+                duration: 1,
+            });
+        }
 
+        if (secondContainer.current) {
+            gsap.to(".sbox", {
+                scrollTrigger: {
+                    trigger: secondContainer.current,
+                    start: "top bottom",
+                    end: "bottom top",
+                    scrub: 1,
+                    markers: true
+                },
+                rotation: -360,
+                duration: 1
+            });
+        }
+    }, [{ scope: container }, { scope: secondContainer }]);
 
     return (
         <div className="images-wrapper">
@@ -24,13 +48,16 @@ const ImageList = () => {
                 <div className="box" data-speed="0.8">
                     <img src={meInNature} alt="me in nature" width={300} />
                 </div>
-
                 <div className="box">
-                    <img src={oldie} alt="old guy coding" width={300} />
+                    <img src={oldie} alt="me coding" width={300} className="oldie-img" />
                 </div>
-
-                <div className="box">
-                    <img src={meCoding} alt="me coding" width={300} />
+            </div>
+            <div ref={secondContainer}>
+                <div className="sbox">
+                    <img src={almi} alt="almi" width={300} />
+                </div>
+                <div className="sbox" data-speed="0.8">
+                    <img src={meCoding} alt="greta" width={300} />
                 </div>
             </div>
         </div>

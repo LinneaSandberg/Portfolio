@@ -9,6 +9,8 @@ interface InputsFormProps {
     initialValues?: Inputs;
 }
 
+// Add a pop-up message to the user when the email is sent successfully!!!!!!!!!!!!!
+
 const ContactSection: React.FC<InputsFormProps> = ({ initialValues }) => {
     const [isLoading, setIsLoading] = useState(false);
     const {
@@ -20,11 +22,10 @@ const ContactSection: React.FC<InputsFormProps> = ({ initialValues }) => {
 
     const onFormSubmit: SubmitHandler<Inputs> = async ({ Firstname, Lastname, Email, Phone, Subject, Message
     }) => {
-        console.log(Firstname, Lastname, Email, Phone, Subject, Message);
         setIsLoading(true);
 
         try {
-            const res = await emailjs.send(
+            await emailjs.send(
                 'service_496n279',
                 'template_m52m9vv',
                 {
@@ -37,7 +38,6 @@ const ContactSection: React.FC<InputsFormProps> = ({ initialValues }) => {
                 },
                 'TTN7_QfFz0BsS0pNf'
             );
-            console.log('Email sent', res);
         } catch (error) {
             console.error('Failed to send email:', error);
         } finally {
