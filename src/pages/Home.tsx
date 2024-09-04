@@ -5,6 +5,7 @@ import SkillsSection from "../components/sections/Skills";
 import profile from "../assets/images/profile-pic.jpeg";
 import Navigation from "../components/Navigation";
 import HeroSection from "../components/sections/Hero";
+import Footer from "../components/sections/Footer";
 
 const Home = () => {
 
@@ -32,7 +33,7 @@ const Home = () => {
 
 
             <footer>
-                <p>&copy; 2024 by Linnea Sandberg</p>
+                <Footer></Footer>
             </footer>
         </div >
     )
