@@ -15,25 +15,33 @@ const ProjectsSection = () => {
                 <div className="project-box">
                     <p>Project 1</p>
                     <figure className="project-figure">
-                        <img className="circle" src={quiz} alt="quiz game"></img>
+                        <a href="https://quizwithflags.netlify.app/">
+                            <img className="circle" src={quiz} alt="quiz game"></img>
+                        </a>
                     </figure>
                 </div>
                 <div className="project-box">
                     <p>Project 2</p>
                     <figure className="project-figure">
-                        <img className="circle" src={movieDB} alt="Movie DB"></img>
+                        <a href="https://thebestmoviepage.netlify.app/">
+                            <img className="circle" src={movieDB} alt="Movie DB"></img>
+                        </a>
                     </figure>
                 </div>
                 <div className="project-box">
                     <p>Project 3</p>
                     <figure className="project-figure">
-                        <img className="circle" src={starWars} alt="Star Wars"></img>
+                        <a href="https://starwarsencyclopia.netlify.app/">
+                            <img className="circle" src={starWars} alt="Star Wars"></img>
+                        </a>
                     </figure>
                 </div>
                 <div className="project-box">
                     <p>Project 4</p>
                     <figure className="project-figure">
-                        <img className="circle" src={sulten} alt="Sulten"></img>
+                        <a href="https://sulten.netlify.app/">
+                            <img className="circle" src={sulten} alt="Sulten"></img>
+                        </a>
                     </figure>
                 </div>
             </div>

@@ -61,11 +61,12 @@ li {
 }
 
 img {
-    border: none
+    border: none;
 }
 
 a {
-    text-decoration: none
+    text-decoration: none;
+    cursor: pointer;
 }
 
 //HomePage
@@ -381,6 +382,7 @@ a {
         }
 
         .skills-title {
+            color: $Red;
             writing-mode: vertical-rl;
             text-align: left;
             flex-shrink: 0;
