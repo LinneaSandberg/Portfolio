@@ -13,7 +13,7 @@ const ProjectsSection = () => {
             <h2 className="projects-title">Projects</h2>
             <div className="boxes-wrapper">
                 <div className="project-box">
-                    <p>Project 1</p>
+                    <h3 className="project-titles">Flag Quiz Game</h3>
                     <figure className="project-figure">
                         <a href="https://quizwithflags.netlify.app/">
                             <img className="circle" src={quiz} alt="quiz game"></img>
@@ -21,7 +21,7 @@ const ProjectsSection = () => {
                     </figure>
                 </div>
                 <div className="project-box">
-                    <p>Project 2</p>
+                    <h3 className="project-titles">The Movie DB</h3>
                     <figure className="project-figure">
                         <a href="https://thebestmoviepage.netlify.app/">
                             <img className="circle" src={movieDB} alt="Movie DB"></img>
@@ -29,7 +29,7 @@ const ProjectsSection = () => {
                     </figure>
                 </div>
                 <div className="project-box">
-                    <p>Project 3</p>
+                    <h3 className="project-titles">Star Wars Encyclopedia</h3>
                     <figure className="project-figure">
                         <a href="https://starwarsencyclopia.netlify.app/">
                             <img className="circle" src={starWars} alt="Star Wars"></img>
@@ -37,7 +37,7 @@ const ProjectsSection = () => {
                     </figure>
                 </div>
                 <div className="project-box">
-                    <p>Project 4</p>
+                    <h3 className="project-titles">Sulten</h3>
                     <figure className="project-figure">
                         <a href="https://sulten.netlify.app/">
                             <img className="circle" src={sulten} alt="Sulten"></img>
