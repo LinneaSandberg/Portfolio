@@ -1,28 +1,27 @@
+import { useRef, useEffect } from 'react';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import oldie from "../assets/images/oldie-pic.jpg";
 import meInNature from "../assets/images/me-in-nature.jpeg";
 import meCoding from "../assets/images/me-koding.jpeg";
 import almi from "../assets/images/almi-ui.png";
-import { useRef } from 'react';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ImageList = () => {
-
-    gsap.registerPlugin(useGSAP);
     const container = useRef<HTMLDivElement>(null);
     const secondContainer = useRef<HTMLDivElement>(null);
 
-    useGSAP(() => {
+    useEffect(() => {
         if (container.current) {
             gsap.to(".box", {
                 scrollTrigger: {
                     trigger: container.current,
-                    start: "top bottom",
-                    end: "bottom top",
+                    start: "bottom center",
+                    end: "top center",
                     scrub: 1,
-                    markers: true
                 },
-                rotation: 360,
+                rotation: 180,
                 duration: 1,
             });
         }
@@ -31,16 +30,19 @@ const ImageList = () => {
             gsap.to(".sbox", {
                 scrollTrigger: {
                     trigger: secondContainer.current,
-                    start: "top bottom",
-                    end: "bottom top",
+                    start: "bottom center",
+                    end: "top center",
                     scrub: 1,
-                    markers: true
                 },
-                rotation: -360,
-                duration: 1
+                rotation: -180,
+                duration: 1,
             });
         }
-    }, [{ scope: container }, { scope: secondContainer }]);
+
+        return () => {
+            ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+        };
+    }, []);
 
     return (
         <div className="images-wrapper">
@@ -61,7 +63,7 @@ const ImageList = () => {
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};
 
 export default ImageList;
