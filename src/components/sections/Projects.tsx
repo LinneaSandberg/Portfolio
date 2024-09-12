@@ -1,50 +1,51 @@
-// import placeholder from "../../assets/images/placeholder.webp";
-// import { gsap } from "gsap";
-// import { useGSAP } from "@gsap/react";
 import quiz from "../../assets/images/projects/quiz.png";
 import movieDB from "../../assets/images/projects/movieDB.png"
 import starWars from "../../assets/images/projects/starWars.png";
 import sulten from "../../assets/images/projects/sulten.png";
+import Carousel from "../Carousel";
+import React from "react";
 
-const ProjectsSection = () => {
+const ProjectsSection: React.FC = () => {
+
+    const items = [
+        {
+            icon: sulten,
+            title: "Sulten",
+            text: "",
+            btn1Text: "",
+            btn1Link: "https://sulten.netlify.app/",
+        },
+        {
+            icon: movieDB,
+            title: "The Movie DB",
+            text: "",
+            btn1Text: "Flags Quiz",
+            btn1Link: "https://thebestmoviepage.netlify.app/ ",
+        },
+        {
+            icon: starWars,
+            title: "Star Wars Encyclopedia",
+            text: "",
+            btn1Text: "Sulten",
+            btn1Link: "https://starwarsencyclopia.netlify.app/",
+        },
+        {
+            icon: quiz,
+            title: "Flag Quiz Game",
+            text: "",
+            btn1Text: "",
+            btn1Link: "https://quizwithflags.netlify.app/",
+        }
+    ];
+
+    const handleInteraction = (label: string) => {
+        console.log(`Interaction with: ${label}`);
+    };
 
     return (
-        <section className="section-wrapper project-section" id="section-projects">
+        <section className="section-wrapper project-wrapper carousel-section" id="section-projects">
             <h2 className="projects-title">Projects</h2>
-            <div className="boxes-wrapper">
-                <div className="project-box">
-                    <h3 className="project-titles">Flag Quiz Game</h3>
-                    <figure className="project-figure">
-                        <a href="https://quizwithflags.netlify.app/">
-                            <img className="circle" src={quiz} alt="quiz game"></img>
-                        </a>
-                    </figure>
-                </div>
-                <div className="project-box">
-                    <h3 className="project-titles">The Movie DB</h3>
-                    <figure className="project-figure">
-                        <a href="https://thebestmoviepage.netlify.app/">
-                            <img className="circle" src={movieDB} alt="Movie DB"></img>
-                        </a>
-                    </figure>
-                </div>
-                <div className="project-box">
-                    <h3 className="project-titles">Star Wars Encyclopedia</h3>
-                    <figure className="project-figure">
-                        <a href="https://starwarsencyclopia.netlify.app/">
-                            <img className="circle" src={starWars} alt="Star Wars"></img>
-                        </a>
-                    </figure>
-                </div>
-                <div className="project-box">
-                    <h3 className="project-titles">Sulten</h3>
-                    <figure className="project-figure">
-                        <a href="https://sulten.netlify.app/">
-                            <img className="circle" src={sulten} alt="Sulten"></img>
-                        </a>
-                    </figure>
-                </div>
-            </div>
+            <Carousel items={items} sendInteraction={handleInteraction} />
         </section>
     )
 }
