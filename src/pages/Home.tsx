@@ -24,11 +24,12 @@ const Home = () => {
 
                 <AboutSection></AboutSection>
 
-                <ContactSection></ContactSection>
-
                 <SkillsSection></SkillsSection>
 
                 <ProjectsSection></ProjectsSection>
+
+                <ContactSection></ContactSection>
+
             </main >
 
 
