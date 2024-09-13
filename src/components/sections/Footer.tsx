@@ -2,9 +2,8 @@
 
 const Footer = () => {
     return (
-        <div>
-            <p>&copy; 2024 by Linnea Sandberg</p>
-
+        <div className="footer-wrapper">
+            <p className="copyright"><span className="details">&copy; Copyright 2024 -</span> Linnea Sandberg</p>
         </div>
     )
 }

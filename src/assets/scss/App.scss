@@ -396,6 +396,12 @@ button {
             color: $Red;
             margin-bottom: 2rem;
         }
+
+        .carousel-icon {
+            max-width: 25%;
+            height: auto;
+            margin: 0 auto;
+        }
     }
 
     // ProjectSection
@@ -405,6 +411,12 @@ button {
         .projects-title {
             color: #ffffff;
             margin-bottom: 2rem;
+        }
+
+        .projects-img {
+            max-width: 40%;
+            height: auto;
+            border-radius: 10px;
         }
     }
 
@@ -424,6 +436,9 @@ button {
             position: relative;
             overflow: hidden;
             width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
             .buttons-wrapper {
                 position: absolute;
@@ -506,12 +521,6 @@ button {
                 align-items: center;
                 height: 100%;
 
-                .carousel-icon {
-                    max-width: 30%;
-                    height: auto;
-                    margin: 0 auto;
-                }
-
                 .carousel-card-text {
                     color: $Black;
                     font-size: medium;
@@ -526,38 +535,23 @@ button {
                 }
             }
         }
+    }
 
-        // dessa används ej nu!
-        .carousel-bg-img {
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            position: relative;
-            height: 80px;
-            margin: auto;
+    // Footer
+    .footer-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1.5rem;
+
+        .copyright {
+            color: $Black;
+
+            .details {
+                font-size: 0.8rem;
+                font-style: italic;
+            }
         }
-
-        .carousel-logo-img {
-            position: absolute;
-            top: 65%;
-            left: 50px;
-        }
-
-        .carousel-p {
-            font-family: 'Open Sans Condensed', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 0;
-        }
-
-        .carousel-card-button {
-            color: #ec642b;
-            border: none;
-            background-color: #fff;
-            font-size: 14px;
-            text-decoration: none;
-        }
-
-        //////////////////////////////////////////
     }
 }
 

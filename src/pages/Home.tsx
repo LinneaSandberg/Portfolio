@@ -32,7 +32,6 @@ const Home = () => {
 
             </main >
 
-
             <footer>
                 <Footer></Footer>
             </footer>

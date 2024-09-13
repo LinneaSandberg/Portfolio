@@ -27,7 +27,7 @@ const Card: React.FC<CardProps> = ({ text, icon, btn1Text, btn1Link, sendInterac
 
     return (
         <li className="carousel-card">
-            <img src={icon} className='carousel-icon' alt="Icon" />
+            <img src={icon} className='carousel-icon projects-img' alt="Icon" />
             <div onClick={toggleTextExpansion} className="carousel-card-text">
                 <p>{displayedText}</p>
             </div>
