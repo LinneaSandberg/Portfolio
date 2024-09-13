@@ -14,10 +14,6 @@ const Navigation = () => {
                     <a href="#section-about" data-title="About" className="pink"></a>
                 </li>
                 <li>
-                    <span className="text" title="Contact">Contact</span>
-                    <a href="#section-contact" data-title="Contact" className="yellow"></a>
-                </li>
-                <li>
                     <span className="text" title="Skills">Skills</span>
                     <a href="#section-skills" data-title="Skills" className="purple"></a>
                 </li>
