@@ -221,10 +221,11 @@ button {
 
                 .about-title {
                     color: $Yellow;
+                    font-size: 2.5rem;
                 }
 
                 p {
-                    font-size: 1rem;
+                    font-size: 1.2rem;
                     margin-bottom: 20px;
                     color: $Black;
                 }
@@ -295,6 +296,7 @@ button {
 
         .contact-title {
             color: $Purple;
+            font-size: 2.5rem;
         }
 
         .logos-container {
@@ -395,6 +397,7 @@ button {
         .skills-title {
             color: $Red;
             margin-bottom: 2rem;
+            font-size: 2.5rem;
         }
 
         .carousel-icon {
@@ -411,6 +414,7 @@ button {
         .projects-title {
             color: #ffffff;
             margin-bottom: 2rem;
+            font-size: 2.5rem;
         }
 
         .projects-img {
@@ -522,14 +526,19 @@ button {
                 height: 100%;
 
                 .carousel-card-text {
-                    color: $Black;
-                    font-size: medium;
                     cursor: pointer;
                     padding: 4rem;
+
+                    .carousel-card-text-p {
+                        color: $Black;
+                        font-size: 1.2rem;
+                    }
                 }
 
                 .carousel-card-outline {
-                    font-size: 12px;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    color: #ffffff;
                     letter-spacing: 0px;
                     text-decoration: none;
                 }
@@ -555,27 +564,88 @@ button {
     }
 }
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .homePage {
+        .hero-section {
+            .hero-text-wrapper {
+                .hero-title {
+                    font-size: 3.5rem;
+                }
+
+                .hero-text {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+
+        .about-section {
+            .about-wrapper {
+                align-items: center;
+            }
+        }
+
+        .carousel-section {
+            .carousel {
+                .carousel-card {
+                    .carousel-card-text {
+                        .carousel-card-text-p {
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 
 @media (min-width: 992px) {
     .homePage {
+        .hero-section {
+            .hero-text-wrapper {
+                .hero-title {
+                    font-size: 4rem;
+                }
+
+                .hero-text {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+
         .about-section {
+            height: 100%;
+
             .about-wrapper {
                 flex-direction: row;
                 gap: 4rem;
+                margin: 2rem 0;
 
                 .about-text-wrapper {
                     max-width: 40%;
+
+                    .about-title {
+                        font-size: 3rem;
+                    }
+
+                    p {
+                        font-size: 1.5rem;
+                        margin-bottom: 10px;
+                    }
                 }
 
                 .imageslist {
                     width: 40%;
+                    margin: auto 0;
                 }
             }
         }
 
 
         .project-section {
+            .projects-title {
+                font-size: 3rem;
+            }
+
             .boxes-wrapper {
                 display: grid;
                 grid-template-columns: repeat(4, 1fr);
@@ -583,6 +653,18 @@ button {
                 width: 80%;
                 padding: 20px;
                 box-sizing: border-box;
+            }
+        }
+
+        .contact-section {
+            .contact-title {
+                font-size: 3rem;
+            }
+        }
+
+        .skills-wrapper {
+            .skills-title {
+                font-size: 3rem;
             }
         }
     }

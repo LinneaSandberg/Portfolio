@@ -29,7 +29,7 @@ const Card: React.FC<CardProps> = ({ text, icon, btn1Text, btn1Link, sendInterac
         <li className="carousel-card">
             <img src={icon} className='carousel-icon projects-img' alt="Icon" />
             <div onClick={toggleTextExpansion} className="carousel-card-text">
-                <p>{displayedText}</p>
+                <p className="carousel-card-text-p">{displayedText}</p>
             </div>
             <a className="carousel-card-outline" href='#'
                 onClick={() => openUrl(btn1Link, btn1Text)}>
