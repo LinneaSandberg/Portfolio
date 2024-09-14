@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import oldie from "../assets/images/oldie-pic.jpg";
 import meInNature from "../assets/images/me-in-nature.jpeg";
-import meCoding from "../assets/images/me-koding.jpeg";
+import beComputer from "../assets/images/by-computer.jpeg";
 import almi from "../assets/images/almi-ui.png";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -59,7 +59,7 @@ const ImageList = () => {
                     <img src={almi} alt="almi" width={300} />
                 </div>
                 <div className="sbox" data-speed="0.8">
-                    <img src={meCoding} alt="greta" width={300} />
+                    <img src={beComputer} alt="greta" width={300} />
                 </div>
             </div>
         </div>

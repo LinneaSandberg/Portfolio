@@ -127,7 +127,7 @@ button {
     }
 
     .menu {
-        position: absolute;
+        position: fixed;
         top: 30px;
         right: 30px;
 
@@ -458,13 +458,13 @@ button {
                     height: 1.5rem;
                     border-radius: 50%;
                     color: $Black;
-                    border: 1px solid $Red;
+                    border: 1px solid #ebe9e9;
                     transition: all .2s cubic-bezier(0.39, 0.575, 0.565, 1);
                     pointer-events: all;
                 }
 
                 .carousel-button:hover {
-                    border: 1px solid #dedede;
+                    border: 1px solid #cecccc;
                 }
 
                 .carousel-button:focus {
