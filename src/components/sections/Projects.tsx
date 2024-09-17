@@ -1,7 +1,7 @@
-import quiz from "../../assets/images/projects/quiz.png";
-import movieDB from "../../assets/images/projects/movieDB.png"
-import starWars from "../../assets/images/projects/starwars.png";
-import sulten from "../../assets/images/projects/sulten.png";
+import quiz from "../../assets/images/projects/Quiz.png";
+import movieDB from "../../assets/images/projects/MovieDB.png"
+import starWars from "../../assets/images/projects/StarWars.png";
+import sulten from "../../assets/images/projects/Sulten.png";
 import Carousel from "../Carousel";
 import React from "react";
 
