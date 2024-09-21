@@ -76,9 +76,6 @@ button {
 
 //HomePage
 .homePage {
-    //position: relative;
-    // padding: 20px;
-
     .hero-section {
         display: flex;
         flex-direction: column;
@@ -110,22 +107,6 @@ button {
         }
     }
 
-    // This makes the figure a circle, and following when scrolling
-    // .logo-pic {
-    //     position: absolute;
-    //     top: 40px;
-    //     left: 30px;
-    //     width: 50px;
-    //     height: 50px;
-    //     overflow: hidden;
-    //     border-radius: 50%;
-
-    //     img {
-    //         width: 100%;
-    //         height: auto;
-    //     }
-    // }
-
     .menu {
         position: fixed;
         top: 30px;
@@ -136,14 +117,6 @@ button {
             margin: 0;
 
             .logo-pic {
-                // position: absolute;
-                // top: 40px;
-                // left: 30px;
-                // width: 50px;
-                // height: 50px;
-                // overflow: hidden;
-                // border-radius: 50%;
-
                 img {
                     width: 100%;
                     height: auto;
@@ -391,8 +364,6 @@ button {
                 max-width: 100%;
                 box-sizing: border-box;
                 border-radius: 0px;
-
-                // this is why its to the right
                 margin-right: 50%;
 
                 &:hover {
@@ -425,25 +396,78 @@ button {
 
     // ProjectSection
     .project-wrapper {
-        background-color: $Red;
+        background-color: $Turquoise;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
 
         .projects-title {
-            color: #ffffff;
-            margin-bottom: 2rem;
+            color: $Pink;
+            margin-bottom: 3rem;
             font-size: 2.5rem;
         }
 
-        .projects-img {
-            max-width: 40%;
-            height: auto;
-            border-radius: 10px;
+        .cardslist {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            justify-items: stretch;
+            width: 100%;
+
+            .card {
+                background-color: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+                .card-img {
+                    width: 100%;
+                    height: 200px;
+                    overflow: hidden;
+                    position: relative;
+                    border-radius: var(--border-radius--m);
+
+                    .card-images {
+                        object-fit: cover;
+                        object-position: center;
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        inset: 0;
+                    }
+                }
+
+                .card-title {
+                    padding: 1.5rem;
+
+                    h3 {
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        line-height: 1.4;
+                    }
+                }
+
+                .card-text {
+                    padding: 1.5rem;
+
+
+                    p {
+                        font-size: 1rem;
+                        line-height: 1.5;
+                        color: $Black;
+                    }
+                }
+            }
         }
+
+
     }
 
     // CarouselSection
     .carousel-section {
         width: 100%;
-        height: 100vh;
+        height: 100%;
         display: flex;
         flex-direction: column;
 
@@ -609,6 +633,14 @@ button {
                         }
                     }
                 }
+            }
+        }
+
+        .project-wrapper {
+            .cardslist {
+                grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+                gap: 3rem;
+                width: 80%;
             }
         }
     }
