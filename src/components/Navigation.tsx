@@ -1,10 +1,17 @@
-export const SectionIds = ["section-about", "section-skills", "section-projects", "section-contact"];
+import profile from "../assets/images/profile-pic.jpeg";
+export const SectionIds = ["section-About", "section-Skills", "section-Projects", "section-Contact"];
 
 const Navigation = () => {
 
     return (
         <div className="menu">
             <ul>
+                <li>
+                    <a href="#Home" className="logo-pic">
+                        <span className="text" title="Home">Home</span>
+                        <img src={profile} alt="Profile picture" />
+                    </a>
+                </li>
                 {SectionIds.map((sectionId, index) => {
                     const sectionName = sectionId.split("-")[1];
                     const color = ["pink", "purple", "red", "yellow"][index];

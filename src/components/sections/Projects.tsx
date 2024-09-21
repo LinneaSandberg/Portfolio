@@ -43,7 +43,7 @@ const ProjectsSection: React.FC = () => {
     };
 
     return (
-        <section className="section-wrapper project-wrapper carousel-section" id="section-projects">
+        <section className="section-wrapper project-wrapper carousel-section" id="section-Projects">
             <h2 className="projects-title">Projects</h2>
             <Carousel items={items} sendInteraction={handleInteraction} />
         </section>

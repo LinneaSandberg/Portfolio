@@ -2,7 +2,7 @@ import ImageList from "../ImageList";
 
 const AboutSection = () => {
     return (
-        <section className="section-wrapper about-section" id="section-about">
+        <section className="section-wrapper about-section" id="section-About">
             <div className="about-wrapper">
                 <div className="about-text-wrapper">
                     <h2 className="about-title">About me</h2>

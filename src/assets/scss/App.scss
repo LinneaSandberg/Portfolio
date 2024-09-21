@@ -40,7 +40,7 @@ body {
     background-color: #ffffff;
     min-height: 100vh;
     min-width: 100vw;
-    margin: 0 2; // This is the margin for the whole page, to the left and right
+    //margin: 0; This is the margin for the whole page, to the left and right
 }
 
 h1,
@@ -77,7 +77,7 @@ button {
 //HomePage
 .homePage {
     //position: relative;
-    padding: 20px;
+    // padding: 20px;
 
     .hero-section {
         display: flex;
@@ -111,20 +111,20 @@ button {
     }
 
     // This makes the figure a circle, and following when scrolling
-    .logo-pic {
-        position: absolute;
-        top: 40px;
-        left: 30px;
-        width: 50px;
-        height: 50px;
-        overflow: hidden;
-        border-radius: 50%;
+    // .logo-pic {
+    //     position: absolute;
+    //     top: 40px;
+    //     left: 30px;
+    //     width: 50px;
+    //     height: 50px;
+    //     overflow: hidden;
+    //     border-radius: 50%;
 
-        img {
-            width: 100%;
-            height: auto;
-        }
-    }
+    //     img {
+    //         width: 100%;
+    //         height: auto;
+    //     }
+    // }
 
     .menu {
         position: fixed;
@@ -134,6 +134,22 @@ button {
         ul {
             padding: 0;
             margin: 0;
+
+            .logo-pic {
+                // position: absolute;
+                // top: 40px;
+                // left: 30px;
+                // width: 50px;
+                // height: 50px;
+                // overflow: hidden;
+                // border-radius: 50%;
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    border-radius: 50%;
+                }
+            }
 
             li {
                 position: relative;

@@ -50,7 +50,7 @@ const ContactSection: React.FC<InputsFormProps> = ({ initialValues }) => {
     }, [initialValues, isSubmitSuccessful, reset]);
 
     return (
-        <section className="section-wrapper contact-section" id="section-contact">
+        <section className="section-wrapper contact-section" id="section-Contact">
             <h2 className='contact-title'>Let´s connect</h2>
             <form className="contact-form" onSubmit={handleSubmit(onFormSubmit)}>
                 <div className="input-wrapper">
