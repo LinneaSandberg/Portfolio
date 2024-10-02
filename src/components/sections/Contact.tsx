@@ -2,8 +2,16 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import githubLogo from '../../assets/images/github.png';
 import linkedinLogo from '../../assets/images/linkedin.svg';
 import emailjs from '@emailjs/browser';
-import { Inputs } from '../../types/Input.types';
 import React, { useEffect, useState } from 'react';
+
+interface Inputs {
+    Firstname: string
+    Lastname: string
+    Email: string
+    Phone: string
+    Subject: string
+    Message: string
+}
 
 interface InputsFormProps {
     initialValues?: Inputs;

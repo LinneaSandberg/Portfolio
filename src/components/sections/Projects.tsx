@@ -6,7 +6,6 @@ import React from "react";
 import Card from "../Card";
 
 const ProjectsSection: React.FC = () => {
-
     const items = [
         {
             icon: sulten,

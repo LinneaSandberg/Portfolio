@@ -5,6 +5,7 @@ interface CardProps {
     title: string;
     text: string;
     btn1Link: string;
+    btn1Text?: string;
 }
 
 

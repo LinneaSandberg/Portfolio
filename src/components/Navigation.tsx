@@ -1,5 +1,5 @@
 import profile from "../assets/images/profile-pic.jpeg";
-export const SectionIds = ["section-About", "section-Projects", "section-Skills", "section-Contact"];
+const SectionIds = ["section-About", "section-Projects", "section-Skills", "section-Contact"];
 
 const Navigation = () => {
 

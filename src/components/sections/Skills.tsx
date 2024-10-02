@@ -6,7 +6,6 @@ import typescriptLogo from '../../assets/images/typescript.svg';
 import jsLogo from '../../assets/images/js.svg';
 
 const SkillsSection: React.FC = () => {
-
     const items = [
         {
             icon: reactLogo,
