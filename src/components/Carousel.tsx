@@ -4,9 +4,8 @@ import Card from './CardCaru';
 interface items {
     icon: string,
     title: string,
-    text: string,
-    btn1Text: string,
-    btn1Link: string,
+    btn1Text?: string,
+    btn1Link?: string,
 }
 
 interface CarouselProps {
@@ -44,10 +43,9 @@ const Carousel: React.FC<CarouselProps> = ({ items, sendInteraction }) => {
                     <Card
                         key={index}
                         icon={item.icon}
-                        text={item.text}
                         title={item.title}
-                        btn1Text={item.btn1Text}
-                        btn1Link={item.btn1Link}
+                        btn1Text={item.btn1Text ? item.btn1Text : ''}
+                        btn1Link={item.btn1Link ? item.btn1Link : ''}
                         sendInteraction={sendInteraction}
                     />
                 ))}

@@ -1,7 +1,4 @@
-// Importing the color module
 @use 'sass:color';
-// border-color: color.scale($Pink, $lightness: 30%);
-
 @font-face {
     font-family: "Figtree";
     src: url("../fonts/Figtree/Figtree-VariableFont_wght.ttf") format("truetype");
@@ -391,6 +388,7 @@ button {
             max-width: 25%;
             height: auto;
             margin: 0 auto;
+            margin-bottom: 2rem;
         }
     }
 
