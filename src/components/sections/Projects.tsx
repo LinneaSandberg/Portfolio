@@ -7,13 +7,13 @@ import Card from "../Card";
 
 const ProjectsSection: React.FC = () => {
     const items = [
-        {
-            icon: sulten,
-            title: "Weather checker",
-            text: "A simple weather app, to learn Vue with TypeScript. Fetching data from Open Mateo API.",
-            btn1Link: "https://linneasandberg.github.io/weather-app/",
+        // {
+        //     icon: sulten,
+        //     title: "Weather checker",
+        //     text: "A simple weather app, to learn Vue with TypeScript. Fetching data from Open Mateo API.",
+        //     btn1Link: "https://linneasandberg.github.io/weather-app/",
 
-        },
+        // },
         {
             icon: sulten,
             title: "Sulten",
