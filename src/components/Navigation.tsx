@@ -1,5 +1,6 @@
 import profile from "../assets/images/profile-pic.jpeg";
-const SectionIds = ["section-About", "section-Projects", "section-Skills", "section-Contact"];
+const SectionIds = ["section-About", "section-Projects", "section-Contact"];
+// , "section-Skills"
 
 const Navigation = () => {
 
@@ -14,7 +15,8 @@ const Navigation = () => {
                 </li>
                 {SectionIds.map((sectionId, index) => {
                     const sectionName = sectionId.split("-")[1];
-                    const color = ["pink", "purple", "red", "yellow"][index];
+                    const color = ["pink", "purple", "yellow"][index];
+                    //"red"
                     return (
                         <li key={sectionId}>
                             <span className="text" title={sectionName}>{sectionName}</span>
