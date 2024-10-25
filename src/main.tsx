@@ -15,6 +15,12 @@ const queryClient = new QueryClient({
   },
 })
 
+console.log("L           I   NNN     N   NNN     N   EEEEEE       AAA")
+console.log("L           I   N  N    N   N  N    N   E           A   A")
+console.log("L           I   N   N   N   N  N    N   EEE        AAAAAAA")
+console.log("L           I   N    N  N   N    N  N   E         A       A")
+console.log("L L L L L   I   N     NNN   N     NNN   EEEEEE   A         A")
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
