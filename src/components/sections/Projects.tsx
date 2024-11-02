@@ -2,18 +2,19 @@ import quiz from "../../assets/images/projects/Quiz.png";
 import movieDB from "../../assets/images/projects/MovieDB.png"
 import starWars from "../../assets/images/projects/StarWars.png";
 import sulten from "../../assets/images/projects/Sulten.png";
+import weather from "../../assets/images/projects/Weather.png";
 import React from "react";
 import Card from "../Card";
 
 const ProjectsSection: React.FC = () => {
     const items = [
-        // {
-        //     icon: sulten,
-        //     title: "Weather checker",
-        //     text: "A simple weather app, to learn Vue with TypeScript. Fetching data from Open Mateo API.",
-        //     btn1Link: "https://linneasandberg.github.io/weather-app/",
+        {
+            icon: weather,
+            title: "Weather checker",
+            text: "A simple weather app, to learn Vue with TypeScript. Fetching data from Open Mateo API.",
+            btn1Link: "https://linneasandberg.github.io/weather-app/",
 
-        // },
+        },
         {
             icon: sulten,
             title: "Sulten",
